@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Área do Administrador</title>
+    <title>Área do Administradorr</title>
     <style>
         body {
             font-family: Arial, sans-serif;
