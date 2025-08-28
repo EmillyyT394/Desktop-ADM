@@ -26,9 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Login Administrador</title>
     <style>
+        /* Fundo estilizado com degradê em tons de azul */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            background: linear-gradient(135deg, #01004C, #003366, #004080);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -38,36 +39,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .login-container {
             background-color: #fff;
             padding: 40px 50px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
             text-align: center;
-            width: 300px;
+            width: 380px;
+        }
+        /* Logo maior e centralizada */
+        .logo img {
+            max-width: 200px;
+            margin-bottom: 25px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
         h1 {
             margin-bottom: 25px;
-            color: #333;
+            color: #01004C;
         }
         input[type="password"] {
             width: 90%;
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 20px;
             font-size: 16px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 6px;
         }
+        /* Botão estilizado na mesma cor do menu */
         button {
             width: 95%;
             padding: 12px;
             font-size: 16px;
-            background-color: #007bff;
+            background-color: #01004C;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
             transition: 0.3s;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #020070;
         }
         .mensagem {
             margin-top: 15px;
@@ -78,6 +88,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <div class="login-container">
+        <!-- Logo da empresa -->
+        <div class="logo">
+            <img src="imagens/logo.png" alt="Logo da Empresa">
+        </div>
         <h1>Login Administrador</h1>
         <form method="post" action="">
             <input type="password" name="senha" placeholder="Digite a senha" required>
