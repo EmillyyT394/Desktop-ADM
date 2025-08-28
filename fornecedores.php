@@ -1,3 +1,4 @@
+<?php require_once __DIR__.'/auth.php'; ?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -8,7 +9,7 @@
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-  <?php $active='fornecedores'; include 'includes/sidebar.php'; ?>
+  <?php include __DIR__.'/menu.php'; ?>
   <main class="content">
     <h1>Lista de Fornecedores</h1>
     <div class="card">

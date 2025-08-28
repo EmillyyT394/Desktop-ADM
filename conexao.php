@@ -4,11 +4,11 @@ $usuario = 'root'; // altere se necessário
 $senha = '';       // altere se necessário
 $banco = 'estetic';
 
-// Cria a conexão
-$conn = new mysqli($host, $usuario, $senha, $banco);
-
-// Verifica se houve erro
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+try {
+    $conn = new mysqli($host, $usuario, $senha, $banco);
+    $conn->set_charset('utf8mb4');
+} catch (mysqli_sql_exception $e) {
+    die('Falha na conexão: ' . $e->getMessage());
 }
 ?>
