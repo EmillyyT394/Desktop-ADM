@@ -1,34 +1,23 @@
 <?php
-// Conexão com o banco
-$host = 'localhost';
-$usuario = 'root';
-$senha = '';
-$banco = 'estetic';
-$conn = new mysqli($host, $usuario, $senha, $banco);
-
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
-}
+session_start();
+require_once __DIR__.'/conexao.php';
 
 $mensagem = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $senhaDigitada = $_POST['senha'] ?? '';
 
-    // Verifica se a senha existe no banco
-    $stmt = $conn->prepare("SELECT * FROM administrador WHERE senha = ?");
-    $stmt->bind_param("s", $senhaDigitada);
+    $stmt = $conn->prepare('SELECT id, senha FROM administrador');
     $stmt->execute();
     $resultado = $stmt->get_result();
 
-    if ($resultado->num_rows > 0) {
-        // Redireciona para a dashboard com menu lateral
-        header("Location: agendamentos.php");
-        exit;
-    } else {
-        $mensagem = "Senha incorreta!";
+    while ($row = $resultado->fetch_assoc()) {
+        if (password_verify($senhaDigitada, $row['senha']) || $senhaDigitada === $row['senha']) {
+            $_SESSION['admin_id'] = $row['id'];
+            header('Location: admin.php');
+            exit;
+        }
     }
-
-    $stmt->close();
+    $mensagem = 'Senha incorreta!';
 }
 ?>
 <!DOCTYPE html>
