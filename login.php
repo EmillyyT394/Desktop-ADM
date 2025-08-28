@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($resultado->num_rows > 0) {
         // Redireciona para a dashboard com menu lateral
-        header("Location: admin.php");
+        header("Location: agendamentos.php");
         exit;
     } else {
         $mensagem = "Senha incorreta!";
