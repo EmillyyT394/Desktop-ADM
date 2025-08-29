@@ -1,18 +1,38 @@
-<?php
-// clientes.php
-?>
-<!DOCTYPE html>
+<?php require_once __DIR__.'/auth.php'; ?>
+<!doctype html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Lista de Fornecedores</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lista de Fornecedores</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-    <?php include 'menu.php'; ?>
-
-    <div class="main-content">
-        <h1>Lista de Clientes</h1>
-        <p>Aqui será exibida a lista de Fornecedores.</p>
+  <?php include __DIR__.'/menu.php'; ?>
+  <main class="content">
+    <h1>Lista de Fornecedores</h1>
+    <div class="card">
+      <table class="table" role="table" aria-label="Fornecedores">
+        <thead>
+          <tr>
+            <th>Fornecedor</th>
+            <th>Contato</th>
+            <th>Telefone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>—</td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
     </div>
+    <div class="actions">
+      <button class="btn" type="button">Novo Fornecedor</button>
+    </div>
+  </main>
 </body>
 </html>

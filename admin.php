@@ -1,33 +1,40 @@
-<!DOCTYPE html>
+<?php require_once __DIR__.'/auth.php'; ?>
+<!doctype html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Área do Administrador</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            background-color: #fff;
-            padding: 40px 60px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Painel do Administrador</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>Lista de agendamentos</h1>
+  <?php include __DIR__.'/menu.php'; ?>
+  <main class="content">
+    <h1>Lista de Agendamentos</h1>
+    <div class="card">
+      <table class="table" role="table" aria-label="Agendamentos">
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Serviço</th>
+            <th>Data</th>
+            <th>Horário</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
     </div>
+    <div class="actions">
+      <button class="btn" type="button">Novo Agendamento</button>
+    </div>
+  </main>
 </body>
 </html>
